@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Admin panel/css/product.css" />
+    <title>Admin Panel</title>
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <header>
+      <div class="logo">
+        <img src="/Admin panel/img/logo-2.png" class="header-logo" alt="" />
+      </div>
+      <div class="user-profile" id="user-profile">
+        <button id="logout-btn">Logout</button>
+        <div class="profile" id="user-initial">
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Container for the entire page -->
+
+    <div class="container">
+      <!-- Sidebar on the left -->
+
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a class="clicked"
+              ><img
+                src="/Admin panel/img/leader-1.png"
+                class="sidebar-img"
+                alt=""
+              />
+              Product</a
+            >
+          </li>
+          <li>
+            <a href="/Admin panel/html/users.html"
+              ><img
+                src="/Admin panel/img/group.png"
+                class="sidebar-img"
+                alt=""
+              />
+              Users</a
+            >
+          </li>
+          <li>
+            <a href="/Admin panel/html/cart-list.html"
+              ><img
+                src="/Admin panel/img/order.png"
+                class="sidebar-img"
+                alt=""
+              />
+              Cart List</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main content on the right -->
+
+      <div class="content">
+        <button class="add-product-btn" id="openModalBtn">Add Product</button>
+
+        <div class="table-container">
+          <!-- Table to display product information -->
+
+          <table id="productTable">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sizes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal" id="productModal">
+      <div class="modal-content" id="modalContent">
+        <div class="add-product-header">
+          <h2>Add Product</h2>
+          <span class="close" id="closeModalBtn">&times;</span>
+        </div>
+
+        <!-- Form for adding a product -->
+        <div class="modal-body">
+          <form id="productForm">
+            <div
+              class="product-Image drop-zone"
+              id="dropZone"
+              onclick="document.getElementById('productImage').click()"
+            >
+              <p>Darg and Drop or</p>
+              <span> Choose your files</span>
+            </div>
+            <input
+              type="file"
+              id="productImage"
+              accept="image/*"
+              hidden
+              multiple
+            />
+            <div id="selectedImages" class="image-container"></div>
+            <p id="productImageError" class="error-message"></p>
+
+            <label for="productName">Product Name<span>*</span>:</label>
+            <input type="text" id="productName" />
+            <p id="productNameError" class="error-message"></p>
+
+            <label for="productDescription"
+              >Product Description<span>*</span>:</label
+            >
+            <textarea id="productDescription" rows="2"></textarea>
+            <p id="productDescriptionError" class="error-message"></p>
+
+            <div class="product-container">
+              <div class="quantity-price">
+                <label for="productQuantity">Quantity<span>*</span>:</label>
+                <input type="number" id="productQuantity" min="0" />
+                <p id="productQuantityError" class="error-message"></p>
+
+                <label for="productPrice">Price<span>*</span>:</label>
+                <input type="number" id="productPrice" min="0" step="0.01" />
+                <p id="productPriceError" class="error-message"></p>
+              </div>
+              <div class="color-size">
+                <label for="productColor">Color<span>*</span>:</label>
+                <div class="color-input-container">
+                  <button
+                    class="color-control minus"
+                    onclick="removeColorInput()"
+                  >
+                    -
+                  </button>
+                  <div id="productColorsContainer">
+                    <!-- Existing input field for selected color -->
+                  </div>
+                  <button
+                    class="color-control plus"
+                    onclick="openColorPalette()"
+                  >
+                    +
+                  </button>
+                </div>
+
+                <div class="color-palette" id="colorPalette">
+                  <div
+                    class="color"
+                    style="background-color: #000000"
+                    onclick="selectColor('#000000')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #faafa8"
+                    onclick="selectColor('#faafa8')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #f39f76"
+                    onclick="selectColor('#f39f76')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #fff8b8"
+                    onclick="selectColor('#fff8b8')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #e2f6d3"
+                    onclick="selectColor('#e2f6d3')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #b4ddd3"
+                    onclick="selectColor('#b4ddd3')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #d4e4ed"
+                    onclick="selectColor('#d4e4ed')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #aeccdc"
+                    onclick="selectColor('#aeccdc')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #d3bfdb"
+                    onclick="selectColor('#d3bfdb')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #f6e2dd"
+                    onclick="selectColor('#f6e2dd')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #ff0000"
+                    onclick="selectColor('#FF0000')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #ff00c8"
+                    onclick="selectColor('#ff00c8')"
+                  ></div>
+                  <div
+                    class="color"
+                    style="background-color: #0000ff"
+                    onclick="selectColor('#0000FF')"
+                  ></div>
+                </div>
+                <p id="productColorError" class="error-message"></p>
+
+                <label for="productSizes">Available Size<span>*</span>:</label>
+                <div id="productSizes">
+                  <input type="checkbox" id="sizeS" value="S" />
+                  <label for="sizeS">S</label>
+
+                  <input type="checkbox" id="sizeM" value="M" />
+                  <label for="sizeM">M</label>
+
+                  <input type="checkbox" id="sizeL" value="L" />
+                  <label for="sizeL">L</label>
+
+                  <input type="checkbox" id="sizeXL" value="XL" />
+                  <label for="sizeXL">XL</label>
+
+                  <input type="checkbox" id="sizeXXL" value="XXL" />
+                  <label for="sizeXXL">XXL</label>
+                </div>
+                <p id="productSizesError" class="error-message"></p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <button type="button" class="save-product-btn" onclick="saveProduct()">
+          Save
+        </button>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="delete-modal" id="confirmationModal">
+      <div class="delete-modal-content">
+        <p>Are you sure you want to delete this product?</p>
+        <hr />
+        <button id="confirmDeleteBtn">Yes, Delete</button>
+        <button id="cancelDeleteBtn">Cancel</button>
+      </div>
+    </div>
+  </body>
+  <script src="/Admin panel/js/product.js"></script>
+</html>

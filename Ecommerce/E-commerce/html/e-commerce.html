@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/E-commerce/css/e-commerce.css" />
+    <title>E-commerce</title>
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <header>
+      <div class="logo">
+        <img src="/Admin panel/img/logo-2.png" class="header-logo" alt="" />
+      </div>
+      <div class="user-profile" id="user-profile">
+        <div class="shopping-dropdown">
+          <span class="cart-item" id="cartItemCount">0</span>
+          <img
+            src="/Admin panel/img/shopping-1.png"
+            class="shopping-img"
+            alt=""
+          />
+
+          <div class="dropdown-content" id="cartDropdown">
+            <!-- Cart items will be dynamically added here -->
+          </div>
+        </div>
+
+        <button id="logout-btn">Logout</button>
+        <div class="profile" id="user-initial">
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- product cards section -->
+      <div class="product-section">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+          />
+          <button onclick="searchProducts()">Search</button>
+        </div>
+        <div class="no-match-message" id="noMatchMessage">
+          <img src="/Admin panel/img/dog-5.png" alt="" />
+          No matching products found.
+        </div>
+        <div class="product-cards" id="productCards"></div>
+      </div>
+    </div>
+
+    <!-- Add this HTML at the end of the body section -->
+
+    <div id="productDialog" class="dialog">
+      <div class="dialog-content">
+        <span class="close-btn" onclick="closeDialog()">X</span>
+        <div class="dialog-img-container">
+          <div id="dialogImage" class="carousel">
+            <button class="prev-btn" onclick="prevImage()">&#10094;</button>
+            <div class="carousel-images">
+              <!-- Images will be dynamically added here -->
+            </div>
+            <button class="next-btn" onclick="nextImage()">&#10095;</button>
+          </div>
+          <div class="carousel-thumbnails" id="carouselThumbnails">
+            <!-- Thumbnails will be dynamically added here -->
+          </div>
+        </div>
+        <hr class="hr" />
+        <div class="dialog-details-container">
+          <div id="dialogDetails"></div>
+          <hr />
+          <div id="quantitySection">
+            <button onclick="adjustQuantity(-1)">-</button>
+            <span id="quantity">1</span>
+            <button onclick="adjustQuantity(1)">+</button>
+          </div>
+          <hr />
+          <div class="size-section" id="sizeSection">
+            <div id="sizeOptions" class="size-options">
+              <!-- Sizes will be dynamically added here -->
+            </div>
+            <span class="error-message" id="sizeError"></span>
+          </div>
+          <hr />
+          <form id="colorForm" class="color-form">
+            <!-- Add radio buttons dynamically using JS -->
+          </form>
+          <span class="error-message" id="colorError"></span>
+          <hr />
+          <p id="dialogPrice"></p>
+          <hr />
+          <button onclick="addCart()" class="dialog-btn">Add Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+
+    <div class="delete-modal" id="confirmationModal">
+      <div class="delete-modal-content">
+        <p>Are you sure you want to remove this item from the cart?</p>
+        <button id="confirmDeleteBtn">Yes, Remove</button>
+        <button id="cancelDeleteBtn">Cancel</button>
+      </div>
+    </div>
+  </body>
+  <script src="/E-commerce/js/e-commerce.js"></script>
+</html>

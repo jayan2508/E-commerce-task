@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Admin panel/css/users.css" />
+    <title>Admin Panel</title>
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <header>
+      <div class="logo">
+        <img src="/Admin panel/img/logo-2.png" class="header-logo" alt="" />
+      </div>
+      <div class="user-profile" id="user-profile">
+        <button id="logout-btn">Logout</button>
+        <div class="profile" id="user-initial">
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- sidebar -->
+
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a href="/Admin panel/html/product.html"
+              ><img
+                src="/Admin panel/img/leader.png"
+                class="sidebar-img"
+                alt=""
+              />
+              Product</a
+            >
+          </li>
+          <li>
+            <a class="clicked"
+              ><img
+                src="/Admin panel/img/group-1.png"
+                class="sidebar-img"
+                alt=""
+              />
+              Users</a
+            >
+          </li>
+          <li>
+            <a href="/Admin panel/html/cart-list.html"
+              ><img
+                src="/Admin panel/img/order.png"
+                class="sidebar-img"
+                alt=""
+              />
+              Cart List</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- users table -->
+
+      <div class="content">
+        <div class="users-table-container">
+          <table id="usersTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="delete-modal" id="confirmationModal">
+      <div class="delete-modal-content">
+        <p>Are you sure you want to delete this user?</p>
+        <button id="confirmDeleteBtn">Yes, Delete</button>
+        <button id="cancelDeleteBtn">Cancel</button>
+      </div>
+    </div>
+  </body>
+  <script src="/Admin panel/js/users.js"></script>
+</html>

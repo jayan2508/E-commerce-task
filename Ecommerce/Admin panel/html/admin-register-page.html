@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/Admin panel/css/admin-register-page.css" />
+  </head>
+
+  <body>
+    <img src="/Admin panel/img/back-1.jpg" alt="" class="back-img" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="mb-0 text-center">Registration</h2>
+              <div class="card-body">
+                <form id="registrationForm">
+                  <div class="form-group">
+                    <label for="name">Name<span class="required"></span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                    />
+                    <div class="size">
+                      <p id="nameError" class="error"></p>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email"
+                      >Email<span class="required"></span
+                    ></label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                    />
+                    <div class="size">
+                      <p id="emailError" class="error"></p>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password"
+                      >Password<span class="required"></span
+                    ></label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      style="position: relative"
+                      id="password"
+                      name="password"
+                    />
+                    <div class="size">
+                      <p id="passwordError" class="error"></p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPassword"
+                      >Confirm Password<span class="required"></span
+                    ></label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      style="position: relative"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                    />
+                    <div class="size">
+                      <p id="confirmPasswordError" class="error"></p>
+                    </div>
+                  </div>
+
+                  <div class="btn-register">
+                    <button type="reset" class="btn" id="cancelButton">
+                      Cancel
+                    </button>
+                    <button type="submit" class="btn">Register</button>
+                  </div>
+
+                  <p class="text-center">
+                    Login your account?<a
+                      href="/Admin panel/html/admin-login-page.html"
+                      >Login</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this modal code to your HTML -->
+    <div id="messageModal" class="modal">
+      <div class="modal-content-alert">
+        <p id="modalMessage"></p>
+        <span class="closeBtn" onclick="closeModal()">X</span>
+      </div>
+    </div>
+
+    <script src="/Admin panel/js/admin-register-page.js"></script>
+  </body>
+</html>

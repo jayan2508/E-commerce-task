@@ -1,0 +1,166 @@
+.card {
+    margin-top: 70px;
+    border: 1px solid var(--card-border);
+    background-color: var(--card-bg);
+    color: var(--card-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#message {
+    font-weight: bold;
+}
+
+.mt-5 {
+    margin-top: 2rem !important;
+}
+
+.btn-register {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+button {
+    margin: 10px;
+    background-color: var(--card-color) !important;
+    color: var(--button-color) !important;
+}
+
+button:hover {
+    background-color: var(--button-hover) !important;
+}
+
+.back-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    position: relative !important;
+}
+
+h2 {
+    padding: 20px;
+}
+
+option {
+    background-color: var(--card-color);
+    color: var(--button-color);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: var(--a-color);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.eye-c {
+    position: absolute;
+    width: 20px;
+    top: 63.7%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.size {
+    height: 10px;
+}
+
+.error {
+    color: var(--a-color);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.required::after {
+    content: "*";
+    color: var(--a-color);
+    margin-left: 5px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 0px;
+}/* Add this CSS code to your existing CSS file or create a new one */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-bg);
+}
+
+.modal-content-alert {
+    background-color: var(--modal-content-bg);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--modal-content-color);
+    width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: var(--button-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtn {
+    color: var(--button-color);
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--card-color);
+}
+
+/* Added styles for modal overlay (background when the modal is open) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+:root{
+    --card-border:#808080;
+    --card-bg:#d9d9d9c4;
+    --card-color:#000000;
+    --button-color:#ffffff;
+    --button-hover:#7b7b7b;
+    --a-color:#ff0000;
+    --modal-bg:#00000066;
+    --modal-content-bg:#ff00006e;
+    --modal-content-color:#ff0000;
+}
